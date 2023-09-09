@@ -1,20 +1,39 @@
 # Medical-QA-with-sentence-transformers
 Created medical Q&A models by utilizing sentence transformers models on medical data.
 
-Description:
-This GitHub repository contains code for a medical question and answer (Q&A) system that utilizes sentence transformers to provide answers to user queries based on medical documents. The code demonstrates how to encode medical documents, user queries, and find the most similar answers using cosine similarity scores. It also includes a feature for answering questions related to the diseases treated by specific drugs.
+# Introduction:
+This GitHub repository presents a comprehensive medical question and answer (Q&A) system powered by state-of-the-art Sentence Transformers. The primary objective of this project is to enable users to obtain accurate and contextually relevant answers to medical queries by leveraging a vast corpus of medical documents. The system excels in providing insights into drug side effects and the diseases treated by specific medications.
 
-Key Features:
+# Key Features:
 
-Loading and Preprocessing Data: The code loads a dataset of 2967 rows of side effects data from drugs.com and transforms it to include descriptive phrases like "side effect" to enhance answer readability. Rows with missing side effect data are dropped.
+1. Data Loading and Preprocessing
+The code begins by loading a rich dataset comprising 2967 rows of drug-related side effects data, which was sourced from drugs.com. The dataset can be accessed here. Notable steps include:
 
-Encoding Medical Documents: The code encodes the side effects data using a Sentence Transformer model and prepares embeddings for end-user queries.
+Transformation of data to include user-friendly phrases like "side effect" for enhanced answer readability.
+Removal of rows with missing side effect data to ensure robust responses.
+2. Encoding Medical Documents
+The heart of the system lies in its ability to encode medical documents effectively. This is accomplished by utilizing a pre-trained Sentence Transformer model. Key steps include:
 
-Answering User Queries: The code uses cosine similarity to find the most similar embeddings in medical documents for user queries. It provides answers to user questions regarding drug side effects, with the option to retrieve the top two most similar answers if a direct match is not found.
+Downloading and initializing the Sentence Transformer model (paraphrase-MiniLM-L6-v2) specifically fine-tuned for natural language understanding.
+Encoding the side effects data from the dataset, effectively converting it into a rich, numerical representation using the initialized model.
+Preparing embeddings for end-user queries, ensuring that the system can process and match user questions.
+3. Answering User Queries
+The repository demonstrates the core functionality of the Q&A system, which is answering user queries accurately. This is achieved by employing cosine similarity as a scoring mechanism to find the most similar embeddings within the medical documents for each user query. Key highlights include:
 
-Additional Feature: Disease Treated: The code extends functionality to answer questions about the diseases treated by specific drugs. It encodes data related to both side effects and diseases treated and provides answers based on user queries.
+Finding the top match for each user query based on cosine similarity scores.
+Handling scenarios where an exact match is not found by returning the top two most similar answers from the medical documents.
+Presenting answers in a structured format, along with their respective scores, to assist users in understanding the relevance of the responses.
+4. Additional Feature: Disease Treated
+In addition to drug side effects, the system can also answer questions about the diseases treated by specific medications. This feature is made possible through the encoding of data related to both side effects and the diseases treated. The process includes:
 
-Conclusion:
-This code showcases a basic medical Q&A system using sentence transformers and cosine similarity. It suggests opportunities for improvement, such as customizing answers to popular questions and expanding the model's capabilities to handle more detailed queries and newer drugs. Additionally, it highlights the potential to integrate multimodal models like CLIP to provide image examples of diseases in response to user queries, enhancing the overall user experience.
+Creating a new corpus that includes information about both side effects and the diseases treated for each drug.
+Allowing users to ask questions related to the diseases treated by specific drugs, thus expanding the system's versatility.
 
-Note: Users are encouraged to ensure comprehensive coverage of user queries to avoid situations where the model returns the most similar match when a specific drug is not present in the dataset.
+# Conclusion
+This repository serves as a robust foundation for building an advanced medical Q&A system. While it excels in answering questions related to drug side effects and diseases treated, there is significant potential for improvement and expansion:
+
+Customizing answers to cater to popular and specific queries.
+Handling more complex and detailed medical inquiries.
+Incorporating information about newly introduced drugs.
+Extending the system with multimodal capabilities, such as providing images related to diseases in response to queries.
+The Q&A system showcased here demonstrates the potential to revolutionize medical information retrieval by providing quick and accurate responses from extensive medical documents.
