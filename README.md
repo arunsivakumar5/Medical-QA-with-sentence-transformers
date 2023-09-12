@@ -2,7 +2,7 @@
 Created medical Q&A models by utilizing sentence transformers models on medical data.
 
 # Introduction:
-This GitHub repository presents a comprehensive medical question and answer (Q&A) system powered by state-of-the-art Sentence Transformers. The primary objective of this project is to enable users to obtain accurate and contextually relevant answers to medical queries by leveraging a vast corpus of medical documents. The system excels in providing insights into drug side effects and the diseases treated by specific medications.
+This GitHub repository presents a medical question and answer (Q&A) system powered by Sentence Transformers. The primary objective of this project is to enable users to obtain accurate and contextually relevant answers to medical queries by leveraging a vast corpus of medical documents. The system excels in providing insights into drug side effects and the diseases treated by specific medications.
 
 # Key Features:
 
